@@ -3,9 +3,9 @@ from pydrive.drive import GoogleDrive
 import picamera
 import datetime
 
-# snap a photo using picamera
+# snap a photo using picamera (e.g. 'images/2016-06-11 04:03:09.269776.jpg')
 camera = picamera.PiCamera()
-img_name = 'images/' + str(datetime.datetime.now()) + '.jpg' // e.g. 'images/2016-06-11 04:03:09.269776.jpg'
+img_name = 'images/' + str(datetime.datetime.now()) + '.jpg'
 camera.capture(img_name)
 
 # auth to gdrive
