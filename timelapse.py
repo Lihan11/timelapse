@@ -10,7 +10,8 @@ camera.capture(img_name)
 
 # auth to gdrive
 gauth = GoogleAuth()
-gauth.LoadCredentialsFile("secret.txt")
+creds = "secret.txt"
+gauth.LoadCredentialsFile(creds)
 
 if gauth.credentials is None:
     gauth.CommandLineAuth()
@@ -19,7 +20,7 @@ elif gauth.access_token_expired:
 else:
     gauth.Authorize()
 
-gauth.SaveCredentialsFile("secret.txt")
+gauth.SaveCredentialsFile(creds)
 
 # upload the photo to gdrive
 drive = GoogleDrive(gauth)
